@@ -1,1 +1,2 @@
 pytest<9
+requests<3
