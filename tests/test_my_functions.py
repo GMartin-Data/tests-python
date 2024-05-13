@@ -18,3 +18,15 @@ def test_divide_pass():
 def test_divide_by_zero():
     with pytest.raises(ZeroDivisionError):
         smf.divide(number_one=10, number_two=0)
+
+def test_multiply_positives():
+    assert smf.multiply(2, 3) == 6
+
+def test_multiply_negatives():
+    assert smf.multiply(-2, -3) == 6
+
+def test_multiply_mixed():
+    assert smf.multiply(-2, 3) == -6
+
+def test_multiply_zero():
+    assert smf.multiply(0, 5) == 0
