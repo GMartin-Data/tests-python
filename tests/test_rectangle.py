@@ -1,10 +1,14 @@
+import pytest
+
 import source.shapes as shapes
 
 
-rectangle = shapes.Rectangle(20, 10)
+@pytest.fixture
+def my_rectangle():
+    return shapes.Rectangle(20, 10)
 
-def test_area():
-    assert rectangle.area() == 10 * 20
+def test_area(my_rectangle):
+    assert my_rectangle.area() == 10 * 20
 
-def test_perimeter():
-    assert rectangle.perimeter() == 2*20 + 2*10
+def test_perimeter(my_rectangle):
+    assert my_rectangle.perimeter() == 2*20 + 2*10
