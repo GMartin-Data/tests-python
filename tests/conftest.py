@@ -4,12 +4,10 @@ import source.shapes as shapes
 
 
 @pytest.fixture
-def my_rectangle():
-    return shapes.Rectangle(20, 10)
-
-@pytest.fixture
-def another_rectangle():
-    return shapes.Rectangle(30, 15)
+def rectangle_factory():
+    def create_rectangle(length, width) -> shapes.Rectangle:
+        return shapes.Rectangle(length=length, width=width)
+    return create_rectangle
 
 @pytest.fixture
 def my_circle():
