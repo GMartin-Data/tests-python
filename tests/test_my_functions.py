@@ -37,3 +37,13 @@ def test_multiply_zero():
 def test_multiply_slow():
     time.sleep(5)
     assert smf.multiply(5, 0) == 0
+
+@pytest.mark.skip(reason="broken")
+def test_add_2():
+    result = my_functions.add(1, 4)
+    assert result == 5
+
+@pytest.mark.xfail(reason="bug_wip")
+def test_add_3():
+    result = my_functions.add(1, 4)
+    assert result == 5
