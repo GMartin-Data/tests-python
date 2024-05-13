@@ -1,3 +1,5 @@
+import time
+
 import pytest
 
 import source.my_functions as smf
@@ -30,3 +32,8 @@ def test_multiply_mixed():
 
 def test_multiply_zero():
     assert smf.multiply(0, 5) == 0
+
+@pytest.mark.slow
+def test_multiply_slow():
+    time.sleep(5)
+    assert smf.multiply(5, 0) == 0
