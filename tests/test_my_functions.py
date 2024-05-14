@@ -6,7 +6,7 @@ import source.my_functions as smf
 
 
 def test_add_pass():
-    assert smf.add(1, 4) == 5
+    assert smf.add(1, 4) == 50
 
 def test_add_fail():
     assert not smf.add(1, 2) == 4
